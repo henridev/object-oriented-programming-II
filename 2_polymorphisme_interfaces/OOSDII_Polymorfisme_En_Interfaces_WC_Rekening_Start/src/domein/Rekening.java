@@ -1,18 +1,16 @@
 package domein;
 
-public abstract class Rekening
+public abstract class Rekening implements BeheerKost
 {
     private final long rekeningNr;
     private double saldo;
     private String houder;
 
-    public Rekening()
-    {
+    public Rekening(){
     	this(0L, "onbekend");
     }
     
-    public Rekening(long rekeningNr, String houder)
-    {
+    public Rekening(long rekeningNr, String houder){
         controleerRekeningNr(rekeningNr);
         this.rekeningNr = rekeningNr;
         setHouder(houder);
@@ -20,8 +18,7 @@ public abstract class Rekening
     
     public abstract String geefCode();
 
-    private void controleerRekeningNr(long rekeningNr)
-    {
+    private void controleerRekeningNr(long rekeningNr){
         long eerste10 = rekeningNr / 100;
         int rest = (int) (rekeningNr % 100);
 
@@ -31,8 +28,7 @@ public abstract class Rekening
         }
     }
 
-    private void setHouder(String houder)
-    {
+    private void setHouder(String houder){
         if (houder == null || houder.equals(""))
         {
             throw new IllegalArgumentException("Houder mag niet leeg zijn");
@@ -40,24 +36,20 @@ public abstract class Rekening
         this.houder = houder;
     }
     
-    public long getRekeningNr()
-    {
+    public long getRekeningNr(){
         return rekeningNr;
     }
 
-    public double getSaldo()
-    {
+    public double getSaldo(){
         return saldo;
     }
 
-    public String getHouder()
-    {
+    public String getHouder(){
         return houder;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString(){
         long eerste3 = getRekeningNr() / 1000000000;
         long rest = getRekeningNr() % 100;
         long midden7 = (getRekeningNr() / 100) % 10000000;
@@ -69,8 +61,7 @@ public abstract class Rekening
                 "en bevat ", getSaldo(), "euro");
     }
 
-    public boolean stortOp(double bedrag)
-    {
+    public boolean stortOp(double bedrag){
         boolean succes = false;
         if (bedrag > 0)
         {
@@ -80,8 +71,7 @@ public abstract class Rekening
         return succes;
     }
 
-    public boolean haalAf(double bedrag)
-    {
+    public boolean haalAf(double bedrag){
         boolean succes = false;
         if (bedrag > 0)
         {
@@ -92,8 +82,7 @@ public abstract class Rekening
         return succes;
     }
 
-    public boolean schrijfBedragOverNaar(double bedrag, Rekening naarRek)
-    {
+    public boolean schrijfBedragOverNaar(double bedrag, Rekening naarRek){
         boolean succes = false;
         if (naarRek != null && haalAf(bedrag))
         {

@@ -20,7 +20,7 @@ public class ComparatorApp {
         //		object mee als tweede parameter 
         //	(3) Print de gesorteerde lijst 
         System.out.println("Sorted by rating");
-        // TODO 
+        Collections.sort(list, new RatingCompare());
         for (Movie movie : list) {
             System.out.println(movie.getRating() + " "
                     + movie.getName() + " "

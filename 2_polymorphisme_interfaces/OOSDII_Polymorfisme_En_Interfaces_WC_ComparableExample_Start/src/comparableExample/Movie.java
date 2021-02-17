@@ -1,6 +1,6 @@
 package comparableExample;
 
-public class Movie {
+public class Movie implements Comparable<Movie> {
 
 	private Double rating;
     private String name;
@@ -23,10 +23,7 @@ public class Movie {
 
 	@Override
 	public String toString() {
-		return String.format("%s %.2f %d",
-				 getName(),
-				 getRating(),
-				 getYear());
+		return String.format("%s %.2f %d", getName(), getRating(), getYear());
 	}
 
 	@Override
@@ -40,22 +37,22 @@ public class Movie {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+
 		Movie other = (Movie) obj;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (year != other.year)
-			return false;
+		if (name == null && other.name != null) return false;
+		if (!name.equals(other.name)) return false;
+		if (year != other.year) return false;
+
 		return true;
-	} 
+	}
+
+	@Override
+	public int compareTo(Movie movie) {
+		int lastCmp = this.getName().compareTo(movie.getName());
+		return (lastCmp != 0 ? lastCmp : this.getYear() == movie.getYear() ? 0 : this.getYear() < movie.getYear() ? -1 : 1);
+	}
 }
 
 

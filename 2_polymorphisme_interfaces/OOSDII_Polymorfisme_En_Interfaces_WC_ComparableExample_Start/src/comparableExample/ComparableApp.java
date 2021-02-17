@@ -16,7 +16,7 @@ public class ComparableApp {
         list.add(new Movie("Return of the Jedi", 8.4, 1983));
 
         
-        //Collections.sort(list);
+        Collections.sort(list);
 
         System.out.println("Movies after sorting : ");
         for (Movie movie : list) {
