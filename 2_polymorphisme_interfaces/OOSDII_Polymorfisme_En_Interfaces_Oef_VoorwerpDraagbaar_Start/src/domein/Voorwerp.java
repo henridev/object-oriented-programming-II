@@ -1,6 +1,6 @@
 package domein;
 
-public class Voorwerp
+public class Voorwerp implements Draagbaar
 {
     private final String naam;
     private double gewicht;
@@ -58,4 +58,9 @@ public class Voorwerp
         return String.format("%s %s met gewicht %.3f kg uit niveau %d",
                 this.getClass().getSimpleName(), naam, gewicht, niveau);
     }
+	@Override
+	public boolean isDraagbaar() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 }

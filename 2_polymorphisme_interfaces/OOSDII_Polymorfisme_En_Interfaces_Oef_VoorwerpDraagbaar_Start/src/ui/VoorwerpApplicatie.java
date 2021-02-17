@@ -20,6 +20,7 @@ public class VoorwerpApplicatie
         dc.voegSleutelToe("Voordeur", 0.5, 3, 1);
         dc.voegWapenToe("Brown", 0.5, 1, 23, true);
         dc.voegSleutelToe("Achterdeur", 0.5, 1, 2);
+        dc.voegGebouwToe("Frankenstein", 4.5);
         System.out.println("Na het toevoegen van enkele wapens en sleutels:");
         System.out.printf("%s", dc.geefOverzicht());
     }

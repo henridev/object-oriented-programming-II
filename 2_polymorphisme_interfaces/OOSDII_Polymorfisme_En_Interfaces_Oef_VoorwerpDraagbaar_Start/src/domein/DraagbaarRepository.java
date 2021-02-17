@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class VoorwerpRepository
+public class DraagbaarRepository
 {
-    private final List<Voorwerp> collectie;
+    private final List<Draagbaar> collectie;
 
-    public VoorwerpRepository()
+    public DraagbaarRepository()
     {
         collectie = new ArrayList<>();
     }
 
-    public void voegVoorwerpToe(Voorwerp voorwerp)
+    public void voegDraagbaarItemToe(Draagbaar voorwerp)
     {
         collectie.add(voorwerp);
     }
@@ -26,7 +26,7 @@ public class VoorwerpRepository
         }
 
         String resul = "";
-        for (Voorwerp eenVoorwerp : collectie)
+        for (Draagbaar eenVoorwerp : collectie)
         {
             resul += String.format("%s%n",eenVoorwerp);
         }

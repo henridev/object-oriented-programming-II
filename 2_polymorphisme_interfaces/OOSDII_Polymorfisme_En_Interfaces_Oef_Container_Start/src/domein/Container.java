@@ -3,7 +3,8 @@ package domein;
 import java.io.*;
 import java.util.*;
 
-public class Container {
+
+public class Container implements Comparable<Container> {
 
     private String eigenaar;
     private int volume;
@@ -62,6 +63,16 @@ public class Container {
             throw new IllegalArgumentException("Ongeldig serienummer!");
         }
     }
+
+	@Override
+	public int compareTo(Container arg0) {
+		int vol1 = this.getVolume();
+		int vol2 = arg0.getVolume();
+		return vol1 == vol2 ? 0 : vol1 < vol2 ? -1 : 1;
+	}
+	
+	@Override
+    public int hashCode() { return this.getVolume();}
 }
 
 
