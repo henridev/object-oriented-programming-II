@@ -1,4 +1,4 @@
-# Polymorfisme & InterfacesTable of Contents
+# lambda expressions TOC
 
 ```
 1. Doelstellingen
