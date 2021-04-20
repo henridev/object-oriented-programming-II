@@ -5,13 +5,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import gui.LoginScherm;
 
-public class StartUp extends Application
-{
+public class StartUp extends Application {
     @Override
-    public void start(Stage primaryStage)
-    {
+    public void start(Stage primaryStage) {
         LoginScherm grid = new LoginScherm();
-// grid is de root node, breedte is 300, hoogte is 275 
+        // grid is de root node, breedte is 300, hoogte is 275
 
         Scene scene = new Scene(grid, 300, 275);
         primaryStage.setScene(scene);

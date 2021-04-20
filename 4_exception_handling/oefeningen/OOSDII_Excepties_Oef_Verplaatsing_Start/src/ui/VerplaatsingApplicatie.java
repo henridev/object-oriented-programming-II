@@ -11,8 +11,7 @@ public class VerplaatsingApplicatie
         this.dc = dc;
     }
 
-    public void start()
-    {
+    public void start() {
         String uitvoer = dc.geefOverzichtAantalDocumenten();
         uitvoer += dc.geefKostenLijst();
         System.out.printf(uitvoer);

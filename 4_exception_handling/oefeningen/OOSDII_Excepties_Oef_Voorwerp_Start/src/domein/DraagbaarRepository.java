@@ -17,15 +17,13 @@ public class DraagbaarRepository {
     }
 
     public String geefOverzicht() {
-        if (collectie.isEmpty()) {
-            return String.format("collectie is leeg");
-        }
+        if (collectie.isEmpty()) { return String.format("collectie is leeg"); }
 
-        String resul = "";
+        String result = "";
         for (Draagbaar item : collectie) {
-            resul += String.format("%s%n",item);
+            result += String.format("%s%n",item);
         }
-        return resul;
+        return result;
     }
 
 }

@@ -43,8 +43,7 @@ public class Sleutel extends Voorwerp {
 
     @Override
     public String toString() {
-        return String.format("%s past op deur %d.%nEr zijn %d sleutel(s) in omloop.",
-                super.toString(), deur, aantalInOmloop);
+        return String.format("%s past op deur %d.%nEr zijn %d sleutel(s) in omloop.", super.toString(), deur, aantalInOmloop);
     }
 
 }

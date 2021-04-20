@@ -6,15 +6,11 @@ import gui.HoofdScherm;
 
 // Dit voorbeeld demonstreert de werking van layout panelen
 
-public class StartUp extends Application
-{
+public class StartUp extends Application {
 
     @Override
-    public void start(Stage primaryStage)
-    {
-        
+    public void start(Stage primaryStage) {
         HoofdScherm root = new HoofdScherm();
-        
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Layout Demo's");

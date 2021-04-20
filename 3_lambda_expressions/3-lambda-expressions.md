@@ -111,7 +111,7 @@ Syntax:
 
 ## 5. Methode referenties
 
-- Lambdaexpressies zijn enkel van toepassing op functionele interfaces.
+- Lambda expressies zijn enkel van toepassing op functionele interfaces.
 - soms roept de lambdaexpressie enkel een bestaande methode aan. => gebruik **methode referentie**
 
 ```java

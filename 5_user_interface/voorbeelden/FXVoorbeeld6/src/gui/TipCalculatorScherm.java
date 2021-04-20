@@ -24,7 +24,7 @@ public class TipCalculatorScherm extends GridPane
     private Slider sldTipPercentage;
     private BigDecimal tipPercentage = new BigDecimal(0.15);
 
-    private TipCalculator domeinController;
+    private final TipCalculator domeinController;
 
     public TipCalculatorScherm(TipCalculator dc)
     {
@@ -55,7 +55,7 @@ public class TipCalculatorScherm extends GridPane
         Label lblTipPercentage = 
                 new Label (String.format("%.0f%%", tipPercentage.multiply(new BigDecimal(100))));
         add(lblTipPercentage,0,1);
-  
+
         sldTipPercentage = new Slider();
         sldTipPercentage.setMin(0.0);
         sldTipPercentage.setMax(30.0);

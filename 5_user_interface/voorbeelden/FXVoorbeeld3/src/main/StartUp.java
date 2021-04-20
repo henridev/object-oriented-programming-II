@@ -6,11 +6,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import gui.LabelScherm;
 
-public class StartUp extends Application
-{
+public class StartUp extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception
-    {
+    public void start(Stage primaryStage) throws Exception {
         LabelScherm root = new LabelScherm();
         Scene scene = new Scene(root, 500, 250, Color.BLACK);
 
@@ -19,7 +17,6 @@ public class StartUp extends Application
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
     public static void main(String[] args)
     {
         launch(args);

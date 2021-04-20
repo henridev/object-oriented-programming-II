@@ -8,12 +8,10 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
-public class DemoEventSchermMetBenoemdeInnerKlasse extends GridPane
-{
+public class DemoEventSchermMetBenoemdeInnerKlasse extends GridPane {
     private final Label lblBoodschap;
 
-    public DemoEventSchermMetBenoemdeInnerKlasse()
-    {
+    public DemoEventSchermMetBenoemdeInnerKlasse() {
         lblBoodschap = new Label();
         Button btnKlik = new Button("Klik");
         this.add(lblBoodschap, 0, 0);
@@ -25,9 +23,7 @@ public class DemoEventSchermMetBenoemdeInnerKlasse extends GridPane
         this.setOnMouseClicked(new InnerKlasseMouseEventAfhandeling());
     }
 
-    private class InnerklasseActionEventAfhandeling 
-                                        implements EventHandler<ActionEvent>
-    {
+    private class InnerklasseActionEventAfhandeling implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event)
         {
@@ -35,12 +31,9 @@ public class DemoEventSchermMetBenoemdeInnerKlasse extends GridPane
         }
     }
 
-    private class InnerKlasseMouseEventAfhandeling 
-                                        implements EventHandler<MouseEvent>
-    {
+    private class InnerKlasseMouseEventAfhandeling implements EventHandler<MouseEvent> {
         @Override
-        public void handle(MouseEvent event)
-        {
+        public void handle(MouseEvent event) {
             System.out.println("x = " + event.getSceneX());
             System.out.println("y = " + event.getSceneY());
         }

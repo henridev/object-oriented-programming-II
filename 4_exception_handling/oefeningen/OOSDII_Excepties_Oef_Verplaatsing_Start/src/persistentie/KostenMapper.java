@@ -7,11 +7,8 @@ import domein.VerplaatsingPerBusTram;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KostenMapper
-{
-
-    public List<Kosten> geefKostenLijst()
-    {
+public class KostenMapper {
+    public List<Kosten> geefKostenLijst() {
         List<Kosten> deLijst = new ArrayList<>();
 
         deLijst.add(new VerplaatsingPerBusTram("Voskenslaan Gent", "Veldstraat Gent", 4.2, 1, false, true));
@@ -22,6 +19,5 @@ public class KostenMapper
         deLijst.add(new VerplaatsingPerAuto("Gent", "Brussel", 53.7, 1.488, 0.0692));
         deLijst.add(new VerplaatsingPerAuto("Gent", "Kortrijk", 47.1, 1.649, 0.034));
         return deLijst;
-
     }
 }

@@ -5,10 +5,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-public class DemoEventScherm extends GridPane
-{
-    public DemoEventScherm()
-    {
+public class DemoEventScherm extends GridPane {
+    public DemoEventScherm() {
         Label lblBoodschap = new Label();
         Button btnKlik = new Button("Klik");
 

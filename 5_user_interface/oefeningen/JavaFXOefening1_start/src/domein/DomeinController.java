@@ -10,33 +10,24 @@ package domein;
  *
  * @author sv964
  */
-public class DomeinController
-{
+public class DomeinController{
     private final VoorwerpRepository voorwerpRepo;
 
-    public DomeinController()
-    {
+    public DomeinController(){
         voorwerpRepo = new VoorwerpRepository();
     }
     
-    public void voegWapenToe(String naam, double gewicht,
-            int niveau, int kracht, boolean gebruikt)
-    {
+    public void voegWapenToe(String naam, double gewicht, int niveau, int kracht, boolean gebruikt){
         Voorwerp wapen = new Wapen(naam,gewicht,niveau,kracht,gebruikt);
         voorwerpRepo.voegVoorwerpToe(wapen);
     }
     
-     public void voegSleutelToe(String naam, double gewicht,
-            int niveau, int deur)
-     {
+     public void voegSleutelToe(String naam, double gewicht, int niveau, int deur){
          Voorwerp sleutel = new Sleutel(naam,gewicht,niveau, deur);
          voorwerpRepo.voegVoorwerpToe(sleutel);
      }
      
-     public String toonOverzicht()
-     {
+     public String toonOverzicht(){
          return voorwerpRepo.toonOverzicht();
      }
-    
-    
 }

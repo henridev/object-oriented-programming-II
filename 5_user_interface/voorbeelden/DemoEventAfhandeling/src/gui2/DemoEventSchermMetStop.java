@@ -21,8 +21,7 @@ public class DemoEventSchermMetStop extends GridPane
         Label lblBoodschap = new Label();
 
         Button[] buttons = new Button[4];
-        for (int i = 0; i < buttons.length; i++)
-        {
+        for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new Button(String.format("  %d  ", i + 1));
         }
 

@@ -6,13 +6,11 @@ public abstract class Voorwerp implements Draagbaar
     private double gewicht;
     private int niveau;
 
-   public Voorwerp(String naam, double gewicht, int niveau)
-    {
+   public Voorwerp(String naam, double gewicht, int niveau) {
         controleerNaam(naam);
         this.naam = naam;
         setGewicht(gewicht);
         setNiveau(niveau);
-
     }
     public Voorwerp(String naam, double gewicht)
     {

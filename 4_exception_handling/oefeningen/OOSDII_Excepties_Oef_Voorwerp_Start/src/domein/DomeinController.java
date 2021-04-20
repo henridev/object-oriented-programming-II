@@ -8,16 +8,12 @@ public class DomeinController {
         draagbaarRepo = new DraagbaarRepository();
     }
 
-    public void voegWapenToe(String naam, double gewicht,
-            int niveau, int kracht, boolean gebruikt) {
-        Wapen wapen = new Wapen(naam, gewicht, niveau, kracht, gebruikt);
-        draagbaarRepo.voegDraagbaarItemToe(wapen);
+    public void voegWapenToe(String naam, double gewicht, int niveau, int kracht, boolean gebruikt) {
+        draagbaarRepo.voegDraagbaarItemToe(new Wapen(naam, gewicht, niveau, kracht, gebruikt));
     }
 
-    public void voegSleutelToe(String naam, double gewicht,
-            int niveau, int deur) {
-        Sleutel sleutel = new Sleutel(naam, gewicht, niveau, deur);
-        draagbaarRepo.voegDraagbaarItemToe(sleutel);
+    public void voegSleutelToe(String naam, double gewicht, int niveau, int deur) {
+        draagbaarRepo.voegDraagbaarItemToe(new Sleutel(naam, gewicht, niveau, deur));
     }
 
     public String geefOverzicht() {
@@ -25,8 +21,7 @@ public class DomeinController {
     }
 
     public void voegGebouwToe(String naam, double hoogte) {
-        Gebouw gebouw = new Gebouw(naam, hoogte);
-        draagbaarRepo.voegDraagbaarItemToe(gebouw);
+        draagbaarRepo.voegDraagbaarItemToe(new Gebouw(naam, hoogte));
     }
 
 }
