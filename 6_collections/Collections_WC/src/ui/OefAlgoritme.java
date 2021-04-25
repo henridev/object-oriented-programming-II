@@ -44,9 +44,7 @@ public class OefAlgoritme
         //Sorteer de arrayList op titel in STIJGENDE volgorde. Bij gelijke titels
         //sorteren op isbn_nr in DALENDE volgorde.
         //---------------------------------------------------------------
-
-
-
+        boeken.sort(Comparator.comparing(Boek::getTitel).thenComparing(Boek::getIsbn_nr, Comparator.reverseOrder()));
 
 
         System.out.println("gesorteerd : ");
@@ -54,27 +52,24 @@ public class OefAlgoritme
 
         //Zet de arrayList om in omgekeerde volgorde (= 1 instructie)
         //---------------------------------------------------------
-
+        Collections.reverse(boeken);
 
 
 
         System.out.println("omgekeerde volgorde : ");
         toonLijst(boeken);
 
-        Integer getallen[] =
-        {
-            6, 5, 9, 3
-        };
+        Integer getallen[] = {6, 5, 9, 3};
         //Toon het grootste element van de array getallen
         //-----------------------------------------------
-
+        System.out.println(Arrays.stream(getallen).max((Integer::compareTo)).get());
 
 
 
 
         //Toon het kleinste element van de array getallen
         //-----------------------------------------------
-
+        System.out.println(Arrays.stream(getallen).min((Integer::compareTo)).get());
 
     }
 

@@ -6,28 +6,38 @@ public class KleineOefeningenList {
 
     private static final String COLORS[] = {"red", "white", "blue"};
 
+    
     //declareer list en list2 van type List. De collections zullen Strings bijhouden.
     //------------------------------------------------------------------------------
     public KleineOefeningenList() {
+        List<String> list = new ArrayList<String>(Arrays.asList("red", "white", "blue"));
 
-        // creëer arrayList list en vul op met { "red", "white", "blue" }  (= 1 instructie)
+
+        // creï¿½er arrayList list en vul op met { "red", "white", "blue" }  (= 1 instructie)
         // Voeg "green" op het einde van de arrayList toe
         // Voeg "green" toe op index 2
         //----------------------------------------------------
+        list.add("green");
+        list.add(2, "green");
         weergevenLijst("oplossing: red white green blue green", list);
 //
+
+
         //verwijder het tweede element
         //---------------------------
+        list.remove(1);
         weergevenLijst("oplossing: red green blue green", list);
 
         //verwijder de string "green"
         //---------------------------------
+        list.remove("green");
         weergevenLijst("oplossing: red blue green", list);
 
         //Geef het tweede element weer op het scherm d.m.v. printf
         //--------------------------------------------------------
         //Komt "blue" weer in de arrayList
         //-----------------------------------------------
+        System.out.printf("%s%n",list.get(1));
         System.out.println("oplossing: blue komt voor");
         /*
    	if (                  )
@@ -39,16 +49,19 @@ public class KleineOefeningenList {
 
         //wijzig het derde element naar de string "yellow"
         //------------------------------------------------
+        list.set(2, "yellow");
         weergevenLijst("oplossing: red blue yellow", list);
 
-        // creëer een tweede lege arrayList (list2)
+        // creï¿½er een tweede lege arrayList (list2)
         //-------------------------------------------
+        List<String> list2 = new ArrayList<>(list);
         
         //alle elementen van list kopiï¿½ren naar een tweede arrayList list2 (= 1 instructie)
         //---------------------------------------------------------------------------------
         
         // is list = list2 ?
         //------------------
+        System.out.println(list.equals(list2) ? "equal" : "unequal");
         System.out.println("Oplossing : idem");
         /*
    	if (              )
@@ -60,7 +73,7 @@ public class KleineOefeningenList {
         naarHoofdletterOmzetten(list);
         weergevenLijst("oplossing: alle elementen van list in hoofdletters", list);
 
-        list = naarKleineLettersOmzetten(list);
+        naarKleineLettersOmzetten(list);
         weergevenLijst("oplossing: alle elementen van list in kleine letters", list);
 
    } // end constructor
@@ -69,7 +82,7 @@ public class KleineOefeningenList {
         //Geef alle elementen van de list weer (laat een spatie tussen elk element).
         //Gebruik printf*/
         //--------------------------------------------------------------------------
-        System.out.printf("%s%n%s", oplossing, "           ");
+        System.out.printf("%s%n%s%s", oplossing, "resultaat: ", String.join(" ", list));
 
         
         System.out.println("\n");
@@ -79,17 +92,14 @@ public class KleineOefeningenList {
     public void naarHoofdletterOmzetten(List<String> list) {
         //Alle strings van list worden omgezet naar hoofdletters
         //-------------------------------------------------------------
-       
-        
+        list.replaceAll(String::toUpperCase);
     }
 
-    public void naarKleineLettersOmzetten(List<String> list)
-    {
+    public void naarKleineLettersOmzetten(List<String> list){
        ////De strings van list worden omgezet naar kleine letters en worden
         //als nieuwe List<String> teruggegeven.  
        //-------------------------------------------------------------
-       
-
+        list.replaceAll(String::toLowerCase);
     }
 
     public static void main(String args[]) {

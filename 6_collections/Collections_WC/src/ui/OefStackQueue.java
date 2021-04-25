@@ -28,23 +28,28 @@ uitvoer -->
 public class OefStackQueue
 {
 	public static void main(String args[])
-	{	Scanner in = new Scanner(System.in);
+	{
+		Scanner in = new Scanner(System.in);
 
 		//definieer stack en queue 
-
+		Stack<String> stack = new Stack<>();
+		Queue<String> queue = new ArrayDeque<>();
 
 
 		//lees woord per woord en plaats in de 2 containers
-
+		for (int i = 0; i < 10; i++) {
+			String input = in.next();
+			stack.push(input);
+			queue.offer(input);
+		}
 
 
 	  	//druk hoofding
-
-
+		System.out.printf("%20s%20s%n%n", "Stack", "Queue");
                 
 	  	//zolang containers niet leeg, druk een regel met betreffende woorden
-
-
-
+		while (!stack.isEmpty()){
+			System.out.printf("%20s%20s%n", stack.pop(), queue.poll());
+		}
 	}
 }
